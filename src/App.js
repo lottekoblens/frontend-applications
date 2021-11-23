@@ -1,11 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-import fetchData from './fetch.js'
+import getData from './providers/fetch.js';
+import { useEffect, useState } from 'react';
 
 
-  
 function App() {
-  console.log(fetchData())
+  const [json, setJson] = useState(null);
+  useEffect(() => {
+    getData().then(data => setJson(data))
+  })
   return (
     <div className="App">
       <header className="App-header">
@@ -13,6 +16,7 @@ function App() {
         <p>
           Hello World
         </p>
+        <pre>{JSON.stringify(json, null, 3)}</pre>
         <a
           className="App-link"
           href="https://reactjs.org"
