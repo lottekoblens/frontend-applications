@@ -1,7 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import getData from './providers/fetch.js';
 import { useEffect, useState } from 'react';
+import BarChart from "./components/BarChart";
 
 
 function App() {
@@ -12,19 +12,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello World
-        </p>
-        <pre>{JSON.stringify(json, null, 3)}</pre>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {json? <BarChart data={json}/> : undefined}
+        
       </header>
     </div>
   );
