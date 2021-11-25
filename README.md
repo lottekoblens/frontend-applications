@@ -58,4 +58,4 @@ The data I use, is fetched from the API Last.fm. I fetch the top numbers of The 
 
 ## :page_with_curl: License
 
-Author: Lotte Koblens, license by [MIT]()
+Author: Lotte Koblens, license by [MIT](https://github.com/lottekoblens/frontend-applications/blob/main/LICENSE)
