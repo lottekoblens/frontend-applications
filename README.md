@@ -33,7 +33,7 @@ If you want to know more about my proces. You can read my [Wiki]()!
 
 If you want to use this code you have to clone the repository by putting this in your terminal: 
 
-``` git clone ```
+``` git clone https://github.com/lottekoblens/frontend-applications.git```
 
 ## :file_folder:	 Data
 
