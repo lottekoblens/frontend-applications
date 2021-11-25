@@ -27,7 +27,7 @@ I also added an hover. With this hover the data about the bar on which you hover
 
 ## :chart_with_upwards_trend: Proces
 
-If you want to know more about my proces. You can read my [Wiki]()!
+If you want to know more about my proces. You can read my [Wiki](https://github.com/lottekoblens/frontend-applications/wiki)!
 
 ## :wrench: Installation
 
