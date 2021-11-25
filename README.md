@@ -6,7 +6,7 @@
 * [Proces](https://github.com/lottekoblens/frontend-applications#chart_with_upwards_trend-proces)
 * [Installation](https://github.com/lottekoblens/frontend-applications#wrench-installation)
 * [Data](https://github.com/lottekoblens/frontend-applications/#file_folder-data)
-* [Wishlist]()
+* [Wishlist](https://github.com/lottekoblens/frontend-applications#pencil-wishlist)
 * [Assignment]()
   * [Rubric]()
 * [Resources]()
