@@ -8,7 +8,7 @@
 * [Data](https://github.com/lottekoblens/frontend-applications/#file_folder-data)
 * [Wishlist](https://github.com/lottekoblens/frontend-applications#pencil-wishlist)
 * [Assignment](https://github.com/lottekoblens/frontend-applications#clipboard-assignment)
-  * [Rubric]()
+  * [Rubric](https://github.com/lottekoblens/frontend-applications#page_facing_up-rubric)
 * [Resources]()
 * [License]()
 
