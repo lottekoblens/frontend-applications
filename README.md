@@ -9,7 +9,7 @@
 * [Wishlist](https://github.com/lottekoblens/frontend-applications#pencil-wishlist)
 * [Assignment](https://github.com/lottekoblens/frontend-applications#clipboard-assignment)
   * [Rubric](https://github.com/lottekoblens/frontend-applications#page_facing_up-rubric)
-* [Resources]()
+* [Resources](https://github.com/lottekoblens/frontend-applications#mag_right-resources)
 * [License]()
 
 ## :bulb: Concept
