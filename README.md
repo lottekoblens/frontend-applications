@@ -10,7 +10,7 @@
 * [Assignment](https://github.com/lottekoblens/frontend-applications#clipboard-assignment)
   * [Rubric](https://github.com/lottekoblens/frontend-applications#page_facing_up-rubric)
 * [Resources](https://github.com/lottekoblens/frontend-applications#mag_right-resources)
-* [License]()
+* [License](https://github.com/lottekoblens/frontend-applications#page_with_curl-license)
 
 ## :bulb: Concept
 
