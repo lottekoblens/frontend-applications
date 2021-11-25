@@ -46,7 +46,7 @@ The data I use, is fetched from the API Last.fm. I fetch the top numbers of The 
 
 ## :clipboard: Assignment
 
-
+Create a client-side application in JavaScript which dynamically renders data to views using either a front-end framework or system created by you. Reflect on the merits and costs of frameworks together.
 
 ### :page_facing_up: Rubric
 
