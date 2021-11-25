@@ -3,7 +3,7 @@
 ## :bookmark_tabs:	 Table of Contents
 
 * [Concept](https://github.com/lottekoblens/frontend-applications#bulb-concept)
-* [Proces]()
+* [Proces](https://github.com/lottekoblens/frontend-applications#chart_with_upwards_trend-proces)
 * [Installation]()
 * [Data]()
 * [Wishlist]()
