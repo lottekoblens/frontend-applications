@@ -7,7 +7,7 @@
 * [Installation](https://github.com/lottekoblens/frontend-applications#wrench-installation)
 * [Data](https://github.com/lottekoblens/frontend-applications/#file_folder-data)
 * [Wishlist](https://github.com/lottekoblens/frontend-applications#pencil-wishlist)
-* [Assignment]()
+* [Assignment](https://github.com/lottekoblens/frontend-applications#clipboard-assignment)
   * [Rubric]()
 * [Resources]()
 * [License]()
