@@ -26,11 +26,6 @@ function BarChart({ data, selection }) {
         const g_yaxis = g.append('g').attr('class', 'y axis')
       }
 
-      ////////////////////////
-
-
-      // making bar chart
-
       // with this function the other functions will be called, but in this way the function updateRect does not dependent of the second one
       const update = (data, selection) => {
         sortData(data, selection)
@@ -118,7 +113,7 @@ function BarChart({ data, selection }) {
         d3.select(d.target).attr('class', 'bar') // with d.target the rect.bar class will be set to bar
         d3.select('#tooltip').classed('hidden', true) // the class hidden will be set to true
       }
-      
+
       update(data, selection)
     },
     [data.length, selection]
