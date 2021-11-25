@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# :desktop_computer: Frontend Applications
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## :bookmark_tabs:	 Table of Contents
 
-## Available Scripts
+* [Concept]()
+* [Proces]()
+* [Installation]()
+* [Data]()
+* [Wishlist]()
+* [Assignment]()
+  * [Rubric]()
+* [Resources]()
+* [License]()
 
-In the project directory, you can run:
+## :bulb: Concept
 
-### `npm start`
+![Concept](https://github.com/lottekoblens/frontenddata/blob/master/concept.gif)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I've been working on this project for two weeks. In those two weeks I had to make a visualization with D3 and React. I displayed the data of the most popular songs of The Netherlands in a bar chart. The bar chart has a filter with two options:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* Show the duration of the song
+* Show the amount of listeners of the song.
 
-### `npm test`
+On the y scale the name of the song will be displayed as you can see above. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I also added an hover. With this hover the data about the bar on which you hover will be displayed. This can also be seen above in the gif.
 
-### `npm run build`
+## :chart_with_upwards_trend: Proces
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you want to know more about my proces. You can read my [Wiki]()!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## :wrench: Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+If you want to use this code you have to clone the repository by putting this in your terminal: 
 
-### `npm run eject`
+``` git clone ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## :file_folder:	 Data
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The data I use, is fetched from the API Last.fm. I fetch the top numbers of The Netherlands. Then I use the name of the song, the duration of the song and the amount of listeners.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## :pencil: Wishlist
 
-## Learn More
+* 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## :clipboard: Assignment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### :page_facing_up: Rubric
 
-### Analyzing the Bundle Size
+![Rubric](./Rubric.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## :mag_right: Resources
 
-### Making a Progressive Web App
+* 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## :page_with_curl: License
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Author: Lotte Koblens, license by [MIT]()
