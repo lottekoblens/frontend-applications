@@ -1,7 +1,4 @@
-import './App.css';
-import getData from './providers/fetch.js';
-import { useEffect, useState } from 'react';
-import BarChart from "./components/BarChart";
+import '../App.css';
 
 function Quiz() {
     const questions = [

@@ -1,7 +1,7 @@
-import './App.css';
-import getData from './providers/fetch.js';
+import '../App.css';
+import { getData } from '../providers/fetch.js';
 import { useEffect, useState } from 'react';
-import BarChart from "./components/BarChart";
+import BarChart from "./BarChart";
 
 function Home() {
     const [json, setJson] = useState(null);
