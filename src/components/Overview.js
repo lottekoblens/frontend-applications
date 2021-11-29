@@ -15,15 +15,15 @@ const DataOverview = () => {
   useEffect(() => {
     getData().then(data => {
       setJson(data)
-      console.log('data uit promise', data)
     })
-  },[])
+  }, [])
 
   const filtered =
-        listenersFrom && listenersTo && json
-          ? json
-            .filter((d) => d.listeners >= listenersFrom && d.listeners <= listenersTo)
-            .sort((a, b) => a.listeners - b.listeners): undefined
+    listenersFrom && listenersTo && json
+      ? json
+        .filter((d) => d.listeners >= listenersFrom && d.listeners <= listenersTo)
+        .sort((a, b) => a.listeners - b.listeners) : undefined
+        console.log(filtered)
 
   const onFromListenersChange = (e) => {
     setListenersFrom(e.currentTarget.value);
@@ -58,7 +58,11 @@ const DataOverview = () => {
         </p>
       </div>
       <div>
-      {filtered && <PieChart data={filtered} />}
+        <div className="hidden" id="tooltip">
+          <p id="name"></p>
+          <p><span id="value"> </span></p>
+        </div>
+        {filtered && <PieChart data={filtered} />}
       </div>
     </>
   );
