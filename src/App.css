@@ -87,3 +87,12 @@ opacity: 0.7;
 .navbar a:hover {
   color: #f1356d;
 }
+
+span {
+  margin: 20px;
+}
+
+.label {
+  display: inline-block;
+  width: 120px;
+}

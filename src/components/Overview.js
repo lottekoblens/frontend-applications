@@ -1,20 +1,29 @@
 import '../App.css';
 import { getData } from '../providers/fetch.js';
 import { useEffect, useState } from 'react';
-
-import DataTable from "./DataTable";
 import Select from "./Select";
+import PieChart from './PieHooks'
 
 const FROM_LISTENERS = [1000000, 1500000];
 const TO_LISTENERS = [2000000, 3000000];
 
 const DataOverview = () => {
-	const [json, setJson] = useState(null);
-	useEffect(() => {
-        getData().then(data => setJson(data))
-    })
+  const [json, setJson] = useState(null);
   const [listenersFrom, setListenersFrom] = useState(null);
   const [listenersTo, setListenersTo] = useState(null);
+
+  useEffect(() => {
+    getData().then(data => {
+      setJson(data)
+      console.log('data uit promise', data)
+    })
+  },[])
+
+  const filtered =
+        listenersFrom && listenersTo && json
+          ? json
+            .filter((d) => d.listeners >= listenersFrom && d.listeners <= listenersTo)
+            .sort((a, b) => a.listeners - b.listeners): undefined
 
   const onFromListenersChange = (e) => {
     setListenersFrom(e.currentTarget.value);
@@ -24,24 +33,15 @@ const DataOverview = () => {
     setListenersTo(e.currentTarget.value);
   };
 
-  const filtered =
-    listenersFrom && listenersTo
-      ? json
-          .filter((d) => d.listeners >= listenersFrom && d.listeners <= listenersTo)
-          .sort((a, b) => a.listeners - b.listeners)
-      : null;
-
-  const title = `Aantal luisteraars van ${listenersFrom || "??"} tot ${listenersTo || "??"}`;
-
   return (
     <>
-      <h1>{title}</h1>
+      <h2>Selecteer de range voor het aantal luisteraars</h2>
 
       <div className="options">
         <p>
           <Select
             name="fromListeners"
-            labelName="Van"
+            labelName="Minimaal aantal luisteraars"
             selectedValue={listenersFrom}
             values={FROM_LISTENERS}
             onChange={onFromListenersChange}
@@ -50,15 +50,16 @@ const DataOverview = () => {
         <p>
           <Select
             name="toListeners"
-            labelName="Tot"
+            labelName="Maximaal aantal luisteraars"
             selectedValue={listenersTo}
             values={TO_LISTENERS}
             onChange={onToListenersChange}
           />
         </p>
       </div>
-
-      {filtered && <DataTable data={filtered} />}
+      <div>
+      {filtered && <PieChart data={filtered} />}
+      </div>
     </>
   );
 };
