@@ -6,41 +6,46 @@ const PieChart = ({ data }) => {
 	const dimensions = {
 		width: 500,
 		height: 500,
-	}
+	} // set the width and height for the pie chart
 
 	const ref = useD3(svg => {
 		const width = dimensions.width,
 			height = dimensions.height,
 			radius = Math.min(width, height) / 3
+			// use with and height to set the radius, the radius is the half of the diameter
 
 		const g = svg
 			.append('g')
 			.attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')')
 
-		const color = d3.scaleOrdinal(['#fd788b', '#feb1b7', '#fedcdb', '#febecc', '#fe6694'])
+		const color = d3.scaleOrdinal(['#fd788b', '#feb1b7', '#fedcdb', '#febecc', '#fe6694']) // set colors for arcs of the pie chart
 
 		const pie = d3.pie()
 		const arc = d3.arc().innerRadius(0).outerRadius(radius)
-		const arcs = g.selectAll('arc').data(pie(data.map(d => d.listeners))).enter().append('g')
+		const arcs = g.selectAll('arc').data(pie(data.map(d => d.listeners))).enter().append('g') // give data of listeners to the arc
 		arcs.append('path')
-			.attr('fill', function (d, i) {
-				return color(i)
+			.attr('fill', function (i) {
+				return color(i) // fill the arcs with the colors that has been set in the const color
 			})
 			.attr('d', arc)
 
-		const onMouseOver = (mouse, data) => {
-			console.log(data)
+		const onMouseOver = (d, data) => {
 			// d is the data of the mouse
-			const xPosition = mouse.clientX // clientX and clientY are the position of the mouse
-			const yPosition = mouse.clientY
-
-			 // set toolTipValue
-			d3.select(mouse.target).attr('class', 'highlight') // class is set to highlight
+			const xPosition = d.clientX // clientX and clientY are the position of the mouse
+			const yPosition = d.clientY
+			console.log(d)
+			// set toolTipValue
+			console.log(data)
+			d3.select(d.target).attr('class', 'highlight') // class is set to highlight
 			d3.select('#tooltip').classed('hidden', false) // class hidden is set to false, so the class is not used
 			d3.select('#tooltip')
 				.style('left', xPosition + 'px')
 				.style('top', yPosition + 'px')
-			d3.select('#name').text('Het nummer ' + data.nameSong + ' heeft ' + data.data + ' aantal luisteraars') // set text for tooltip 
+				.text(
+					"nummer: " + data.nameSong + '\n' + 
+					"luisteraars: " + data.data // give tooltip this text with the right data
+				)
+
 		}
 
 		const onMouseOut = (mouse) => {
@@ -49,12 +54,9 @@ const PieChart = ({ data }) => {
 		}
 
 		arcs
-			.on('mousemove', onMouseOver)
-			.on('mouseout', onMouseOut)
-
+			.on('mouseover', onMouseOver) // when mouse moves over arc, call the function onMouseOver
+			.on('mouseout', onMouseOut) // when mouse moves away from the arc, call the function onMouseOut
 	}, [])
-
-
 
 	return (
 		<svg

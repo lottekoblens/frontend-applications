@@ -8,9 +8,10 @@ const FROM_LISTENERS = [1000000, 1500000];
 const TO_LISTENERS = [2000000, 3000000];
 
 const DataOverview = () => {
-  const [json, setJson] = useState(null);
-  const [listenersFrom, setListenersFrom] = useState(null);
-  const [listenersTo, setListenersTo] = useState(null);
+  const [json, setJson] = useState(null); // when json is created it is null and when setJson is called then json is filled with the data
+  const [listenersFrom, setListenersFrom] = useState(null); // when listenersFrom is created it is null and when setListenersFrom is called then listenersFrom is filled with the right number
+  const [listenersTo, setListenersTo] = useState(null); // when listenersTo is created it is null and when setListenersTo is called then listenersTo is filled with the right number
+  const [newData, setNewData] = useState(null);
 
   useEffect(() => {
     getData().then(data => {
@@ -23,7 +24,6 @@ const DataOverview = () => {
       ? json
         .filter((d) => d.listeners >= listenersFrom && d.listeners <= listenersTo)
         .sort((a, b) => a.listeners - b.listeners) : undefined
-        console.log(filtered)
 
   const onFromListenersChange = (e) => {
     setListenersFrom(e.currentTarget.value);
@@ -63,6 +63,7 @@ const DataOverview = () => {
           <p><span id="value"> </span></p>
         </div>
         {filtered && <PieChart data={filtered} />}
+        {/* give PieChart filtered, so that data can be used in the pie chart */}
       </div>
     </>
   );
