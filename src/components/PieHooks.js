@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import useD3 from '../providers/useD3'
 import * as d3 from 'd3'
 
