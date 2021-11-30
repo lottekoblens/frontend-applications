@@ -14,7 +14,7 @@
 
 ## :bulb: Concept
 
-![Concept](https://github.com/lottekoblens/frontenddata/blob/master/concept.gif)
+![Concept](https://github.com/lottekoblens/frontend-applications/blob/main/barchart.gif)
 
 I've been working on this project for two weeks. In those two weeks I had to make a visualization with D3 and React. I displayed the data of the most popular songs of The Netherlands in a bar chart. The bar chart has a filter with two options:
 
