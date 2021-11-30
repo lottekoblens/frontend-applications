@@ -12,6 +12,14 @@ const DataOverview = () => {
   const [listenersFrom, setListenersFrom] = useState(null); // when listenersFrom is created it is null and when setListenersFrom is called then listenersFrom is filled with the right number
   const [listenersTo, setListenersTo] = useState(null); // when listenersTo is created it is null and when setListenersTo is called then listenersTo is filled with the right number
 
+  const onFromListenersChange = (e) => {
+    setListenersFrom(e.currentTarget.value);
+  };
+
+  const onToListenersChange = (e) => {
+    setListenersTo(e.currentTarget.value);
+  };
+
   useEffect(() => {
     getData().then(data => {
       setJson(data)
@@ -22,15 +30,7 @@ const DataOverview = () => {
     listenersFrom && listenersTo && json
       ? json
         .filter((d) => d.listeners >= listenersFrom && d.listeners <= listenersTo)
-        .sort((a, b) => a.listeners - b.listeners) : undefined
-
-  const onFromListenersChange = (e) => {
-    setListenersFrom(e.currentTarget.value);
-  };
-
-  const onToListenersChange = (e) => {
-    setListenersTo(e.currentTarget.value);
-  };
+        .sort((a, b) => a.listeners - b.listeners) : null;
 
   return (
     <>

@@ -44,7 +44,6 @@ const PieChart = ({ data }) => {
 					"nummer: " + data.nameSong + '\n' + 
 					"luisteraars: " + data.data // give tooltip this text with the right data
 				)
-
 		}
 
 		const onMouseOut = (mouse) => {
