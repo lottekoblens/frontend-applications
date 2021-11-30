@@ -11,7 +11,6 @@ const DataOverview = () => {
   const [json, setJson] = useState(null); // when json is created it is null and when setJson is called then json is filled with the data
   const [listenersFrom, setListenersFrom] = useState(null); // when listenersFrom is created it is null and when setListenersFrom is called then listenersFrom is filled with the right number
   const [listenersTo, setListenersTo] = useState(null); // when listenersTo is created it is null and when setListenersTo is called then listenersTo is filled with the right number
-  const [newData, setNewData] = useState(null);
 
   useEffect(() => {
     getData().then(data => {
