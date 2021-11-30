@@ -23,7 +23,9 @@ I've been working on this project for two weeks. In those two weeks I had to mak
 
 On the y scale the name of the song will be displayed as you can see above. 
 
-I also added an hover. With this hover the data about the bar on which you hover will be displayed. This can also be seen above in the gif.
+I also added an hover. With this hover the data about the bar on which you hover will be displayed. This can also be seen above in the firs gif.
+
+On the other page I created a pie chart. This pie chart is created after the user selects a range as you can see in the second gif.
 
 ## :chart_with_upwards_trend: Proces
 
