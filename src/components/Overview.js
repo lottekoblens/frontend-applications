@@ -13,26 +13,24 @@ const DataOverview = () => {
   const [listenersTo, setListenersTo] = useState(null); // when listenersTo is created it is null and when setListenersTo is called then listenersTo is filled with the right number
 
   const onFromListenersChange = (e) => {
-    setListenersFrom(e.currentTarget.value);
+    setListenersFrom(e.currentTarget.value); // value is number of FROM_LISTENERS that's been selected by user
   };
 
   const onToListenersChange = (e) => {
-    setListenersTo(e.currentTarget.value);
+    setListenersTo(e.currentTarget.value); // value is number of TO_LISTENERS that's been selected by user
   };
 
   useEffect(() => {
     getData().then(data => {
-      setJson(data)
+      setJson(data) // when data is fetched, then give data to setJson
     })
   }, [])
 
   const filtered =
     listenersFrom && listenersTo && json
-      ? json
-        .filter((d) => d.listeners >= listenersFrom && d.listeners <= listenersTo)
+      ? json // if listenersFrom, listenersTo, json have data, then do the filter and sort on json
+        .filter((d) => d.listeners >= listenersFrom && d.listeners <= listenersTo) // filter data of which the amount of listeners is bigger and equal as listenersFrom and smaller or equal as listenersTp
         .sort((a, b) => a.listeners - b.listeners) : null;
-
-
 
   return (
     <>
@@ -40,7 +38,7 @@ const DataOverview = () => {
 
       <div className="options">
         <p>
-          <Select
+          <Select // call component Select and give it the following values
             name="fromListeners"
             labelName="Minimaal aantal luisteraars"
             selectedValue={listenersFrom}
@@ -49,7 +47,7 @@ const DataOverview = () => {
           />
         </p>
         <p>
-          <Select
+          <Select // call component Select and give it the following values
             name="toListeners"
             labelName="Maximaal aantal luisteraars"
             selectedValue={listenersTo}

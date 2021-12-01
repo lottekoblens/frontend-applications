@@ -10,6 +10,7 @@ export const getData = () => {
                 delete data.mbid
                 delete data.streamable
                 return data
+                // delete unused properties
               })
               .map(data => {
                 Object.defineProperty(data, 'nameSong', Object.getOwnPropertyDescriptor(data, 'name'))

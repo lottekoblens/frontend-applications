@@ -50,11 +50,7 @@ function BarChart({ data, selection }) {
       }
 
       const updateXscale = (data, selection) => { //update the scales
-        if (selection === 'listeners') {
-          xscale.domain([0, d3.max(data, d => +d.listeners)])
-        } else {
-          xscale.domain([0, d3.max(data, d => +d.duration)])
-        }
+        xscale.domain([0, d3.max(data, d => +d[selection])]) // on xscale use data of listeners when selection is equal to listeners
         yscale.domain(data.map((d) => d.nameSong)) // on the yscale the name of the song will be displayed
       }
 
@@ -77,16 +73,8 @@ function BarChart({ data, selection }) {
           .duration(800)
           .attr('y', (d) => yscale(d.nameSong))
 
-        // when selection is listeners the listeners will be displayed on the xscale
-        if (selection === 'listeners') {
-          rect
-            .attr('width', (d) => xscale(d.listeners))
-        }
-        // otherwise the duration will be displayed on the xscale
-        else {
-          rect
-            .attr('width', (d) => xscale(d.duration))
-        }
+        rect
+          .attr('width', (d) => xscale(d[selection]))
       }
 
       const onMouseOver = (d, data) => {
@@ -101,7 +89,7 @@ function BarChart({ data, selection }) {
         d3.select('#tooltip')
           .style('left', xPosition + 'px')
           .style('top', yPosition + 'px')
-        d3.select('#name').text('Het nummer ' + data.nameSong) // set text for tooltip 
+        d3.select('#name').text('Het nummer ' + data.nameSong + ' van ' + data.artist.name) // set text for tooltip 
         if (selection === 'listeners') {
           d3.select('#value').text('heeft ' + toolTipValue + ' luisteraars.')
         } else {

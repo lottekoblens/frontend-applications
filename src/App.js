@@ -6,11 +6,11 @@ import Overview from './components/Overview.js'
 
 function App() {
   return (
-    <Router>
+    <Router> {/* use router so that different pages can be used */}
       <div className="App">
-        <Navbar />
+        <Navbar /> {/* use component Navbar*/}
         <div className="content">
-          <Switch>
+          <Switch> {/* switch to other component based on path */}
             <Route exact path="/">
               <Home />
             </Route>

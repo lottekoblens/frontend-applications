@@ -4,13 +4,13 @@ import { useEffect, useState } from 'react';
 import BarChart from "./BarChart";
 
 function Home() {
-    const [json, setJson] = useState(null);
-    const [selection, setSelection] = useState('duration');
+    const [json, setJson] = useState(null); // json is set to null. when setJson is called and given data then give data to json
+    const [selection, setSelection] = useState('duration'); // selection is set to duration, but when setSelection is called, then selection gets value that given with setSelection
     const onRadioButtonChange = (event) => {
         setSelection(event.currentTarget.value) // set selection with the value of the radiobutton that is selected
     }
     useEffect(() => {
-        getData().then(data => setJson(data))
+        getData().then(data => setJson(data)) // when data is fetched, call function setJson and give it the data, so that the data can be passed to json
     })
     return (
         <div className="App">

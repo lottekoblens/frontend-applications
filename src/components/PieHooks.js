@@ -23,13 +23,12 @@ const PieChart = ({ data }) => {
 
 		const pie = d3.pie() // creates useful data to generate a pie chart in the SVG
 		const arc = d3.arc().innerRadius(100).outerRadius(radius)
-		const arcs = g.selectAll('arc').data(pie.value(d => d.listeners)(data)).enter().append('g') // give data of listeners to the arc
+		const arcs = g.selectAll('path').data(pie.value(d => d.listeners)(data)).enter().append('g') // give data of listeners to the arc
 		arcs.append('path')
 			.attr('fill', function (i) {
 				return color(i) // fill the arcs with the colors that has been set in the const color
 			})
 			.attr('d', arc)
-		console.log(data)
 
 		const onMouseOver = (d, data) => {
 			// d is the data of the mouse
@@ -58,7 +57,6 @@ const PieChart = ({ data }) => {
 		arcs
 			.on('mouseover', onMouseOver) // when mouse moves over arc, call the function onMouseOver
 			.on('mouseout', onMouseOut) // when mouse moves away from the arc, call the function onMouseOut
-
 	}, [data])
 
 	return (
