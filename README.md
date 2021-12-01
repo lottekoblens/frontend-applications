@@ -56,7 +56,7 @@ Create a client-side application in JavaScript which dynamically renders data to
 
 ## :mag_right: Resources
 
-* 
+* Tutorials Teacher. (z.d.). Piecharts with D3. Geraadpleegd op 26 november 2021, van https://www.tutorialsteacher.com/d3js/create-pie-chart-using-d3js
 
 ## :page_with_curl: License
 
