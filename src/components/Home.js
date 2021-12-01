@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import BarChart from "./BarChart";
 
 function Home() {
-    const [json, setJson] = useState(null); 
+    const [json, setJson] = useState(null);
     const [selection, setSelection] = useState('duration');
     const onRadioButtonChange = (event) => {
         setSelection(event.currentTarget.value) // set selection with the value of the radiobutton that is selected
