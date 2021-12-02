@@ -63,7 +63,12 @@ Create a client-side application in JavaScript which dynamically renders data to
 
 ## :mag_right: Resources
 
-* Tutorials Teacher. (z.d.). Piecharts with D3. Geraadpleegd op 26 november 2021, van https://www.tutorialsteacher.com/d3js/create-pie-chart-using-d3js
+* Ambrero Software. (2021, 6 juli). Wat is React en wat zijn de voordelen? Geraadpleegd op 24 november 2021, van https://ambrero.nl/kennis/react
+* React. (z.d.-a). Components and Props –. Geraadpleegd op 24 november 2021, van https://reactjs.org/docs/components-and-props.html
+* React. (z.d.). Hooks API Reference –. Geraadpleegd op 24 november 2021, van https://reactjs.org/docs/hooks-reference.html
+* React. (z.d.-b). Using the Effect Hook –. Geraadpleegd op 24 november 2021, van https://reactjs.org/docs/hooks-effect.html
+* MDN Web docs. (2021, 1 december). Array.prototype.reduce() - JavaScript | MDN. Geraadpleegd op 2 december 2021, van https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+* Tutorials Teacher. (z.d.-b). Piecharts with D3. Geraadpleegd op 25 november 2021, van https://www.tutorialsteacher.com/d3js/create-pie-chart-using-d3js
 
 ## :page_with_curl: License
 
