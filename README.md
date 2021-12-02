@@ -37,6 +37,14 @@ If you want to use this code you have to clone the repository by putting this in
 
 ``` git clone https://github.com/lottekoblens/frontend-applications.git```
 
+Then install everything with:
+
+``` npm install ```
+
+After that you can run the project by simply typing this in your terminal:
+
+```npm start```
+
 ## :file_folder:	 Data
 
 The data I use, is fetched from the API Last.fm. I fetch the top numbers of The Netherlands. Then I use the name of the song, the duration of the song and the amount of listeners.
@@ -45,6 +53,7 @@ The data I use, is fetched from the API Last.fm. I fetch the top numbers of The 
 ## :pencil: Wishlist
 
 * Put functions of Bar chart and Pie chart in components instead of putting it all in the same files.
+* Add a transition to the pie chart (but this was very difficult and I didn't have enough time so I couldn't fix this) 
 
 ## :clipboard: Assignment
 
