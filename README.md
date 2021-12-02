@@ -44,7 +44,7 @@ The data I use, is fetched from the API Last.fm. I fetch the top numbers of The 
 
 ## :pencil: Wishlist
 
-* 
+* Put functions of Bar chart and Pie chart in components instead of putting it all in the same files.
 
 ## :clipboard: Assignment
 
