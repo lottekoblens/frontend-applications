@@ -23,7 +23,7 @@ I've been working on this project for two weeks. In those two weeks I had to mak
 
 On the y scale the name of the song will be displayed as you can see above. I also added an hover. With this hover the data about the bar on which you hover will be displayed. This can also be seen above in the first gif.
 
-On the other page I created a pie chart. This pie chart is created after the user selects a range as you can see in the second gif. The pie chart displays the amount of listeners and it has the percentage of the parts of the total. So one song has for example 8% of listeners of the total amount of listeners.
+On the other page I created a pie chart. This pie chart is created after the user selects a range as you can see in the second gif. The pie chart displays the amount of listeners and it has the percentage of the parts of the total. So one song has for example 8% of listeners of the total amount of listeners. This pie chart also displays more information when the user hovers over it.
 
 ## :chart_with_upwards_trend: Proces
 
