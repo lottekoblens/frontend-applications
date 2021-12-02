@@ -70,10 +70,10 @@ function BarChart({ data, selection }) {
           .attr('height', yscale.bandwidth())
           .transition()
           .duration(800)
-          .attr('y', (d) => yscale(d.nameSong))
+          .attr('y', (d) => yscale(d.nameSong)) // put nameSong on y scale
 
         rect
-          .attr('width', (d) => xscale(d[selection]))
+          .attr('width', (d) => xscale(d[selection])) // put selection on x scale
       }
 
       const onMouseOver = (d, data) => {
@@ -90,7 +90,7 @@ function BarChart({ data, selection }) {
           .style('top', yPosition + 'px')
         d3.select('#name').text('Het nummer ' + data.nameSong + ' van ' + data.artist.name) // set text for tooltip 
         if (selection === 'listeners') {
-          d3.select('#value').text('heeft ' + toolTipValue + ' luisteraars.')
+          d3.select('#value').text('heeft ' + toolTipValue + ' luisteraars.') // when listeners is displayed then show this text
         } else {
           d3.select('#value').text('duurt: ' + toolTipValue + ' seconden.')
         }
