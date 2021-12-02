@@ -62,7 +62,7 @@ const DataOverview = () => {
           <p><span id="value"> </span></p>
         </div>
         {filtered && <PieChart data={filtered} />}
-        {/* give PieChart filtered, so that data can be used in the pie chart */}
+        {/* give PieChart filtered, so that this data can be used in the pie chart */}
       </div>
     </>
   );

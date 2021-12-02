@@ -5,7 +5,7 @@ const PieChart = ({ data }) => {
 	const dimensions = {
 		width: 500,
 		height: 500,
-	} // set the width and height for the pie chart
+	} // set the width and height for the svg of the pie chart
 
 	const ref = useD3(svg => {
 		const width = dimensions.width,
@@ -13,7 +13,7 @@ const PieChart = ({ data }) => {
 			radius = Math.min(width, height) / 3
 		// use with and height to set the radius, the radius is the half of the diameter
 
-		svg.select('g').remove() // remove g so that when pie chart is updated the old pie is gone
+		svg.select('g').remove() // remove g so that when pie chart is updated the old pie is removed
 
 		const g = svg
 			.append('g') // add g to svg
@@ -21,21 +21,42 @@ const PieChart = ({ data }) => {
 
 		const color = d3.scaleOrdinal(['#fd788b', '#feb1b7', '#fedcdb', '#febecc', '#fe6694']) // set colors for arcs of the pie chart
 
-		const pie = d3.pie() // creates useful data to generate a pie chart in the SVG
-		const arc = d3.arc().innerRadius(100).outerRadius(radius)
-		const arcs = g.selectAll('path').data(pie.value(d => d.listeners)(data)).enter().append('g') // give data of listeners to the arc
-		arcs.append('path')
-			.attr('fill', function (i) {
-				return color(i) // fill the arcs with the colors that has been set in the const color
+		const pie = d3.pie() // returns an array of object with angle information
+		const arc = d3.arc().innerRadius(100).outerRadius(radius).padAngle(0.005) // returns an arc path generator
+		const arcs = g.selectAll('.arc')
+		arcs.data(pie.value(d => d.listeners)(data)) // add data to pie chart
+			.enter()
+			.append('path')
+			.attr('class', 'arc')
+			.attr('fill', function (d) {
+				return color(d) // fill the arcs with the colors that has been set in the const color
+				// it gets the data joined to it for the angle information it needs so that it can compute the path.
 			})
-			.attr('d', arc)
+			.attr('d', arc) // the d attribute is the value returned by arc. when the arc function is called for a path element, 
 
-		const onMouseOver = (d, data) => {
+		arcs.data(pie.value(d => d.listeners)(data))
+			.enter()
+			.append('text') // add text to arcs
+			.text(function (d) {
+				const scores = data.map(d => d.listeners) // scores are all values of listeners that the pie chart consists off
+				const totalScores = scores.reduce(
+					(previousScore, currentScore) => previousScore + currentScore, 0 // calculate total
+				)
+				return Math.round((d.data.listeners / totalScores) * 100) + '%' // calculate the percentage of the arc of the total
+			})
+			.attr('transform', function (d) {
+				return 'translate(' + arc.centroid(d) + ')'
+			})
+			.attr('fill', 'black')
+			.attr('text-anchor', 'middle') // position the text in the middle
+			.style('font-size', 12)
+
+		const onMouseOver = (mouse, data) => {
 			// d is the data of the mouse
-			const xPosition = d.clientX // clientX and clientY are the position of the mouse
-			const yPosition = d.clientY
+			const xPosition = mouse.clientX // clientX and clientY are the position of the mouse
+			const yPosition = mouse.clientY
 
-			d3.select(d.target).attr('class', 'highlight') // class is set to highlight
+			d3.select(mouse.target).attr('class', 'highlight') // class is set to highlight
 			d3.select('#tooltip').classed('hidden', false) // class hidden is set to false, so the class is not used
 			d3.select('#tooltip')
 				.style('left', xPosition + 'px')
@@ -51,10 +72,10 @@ const PieChart = ({ data }) => {
 			d3.select('#tooltip').classed('hidden', true) // the class hidden will be set to true
 		}
 
-		arcs.on('mouseover', null) // set mouseover to null to set mouseover off
+		g.selectAll('.arc').on('mouseover', null) // set mouseover to null to set mouseover off
 			.on('mouseout', null)
 
-		arcs
+		g.selectAll('.arc')
 			.on('mouseover', onMouseOver) // when mouse moves over arc, call the function onMouseOver
 			.on('mouseout', onMouseOut) // when mouse moves away from the arc, call the function onMouseOut
 	}, [data])

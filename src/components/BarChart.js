@@ -63,7 +63,6 @@ function BarChart({ data, selection }) {
             return rect_enter
           }
         ) // on mouseouver, mousemove, mouseout the functions will be called
-          .on('mouseover', onMouseOver)
           .on('mousemove', onMouseOver)
           .on('mouseout', onMouseOut)
 
